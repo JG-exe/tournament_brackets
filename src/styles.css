@@ -1,0 +1,84 @@
+:root {
+  color-scheme: dark; /* native controls (selects, scrollbars) render dark */
+
+  /* Brand palette */
+  --brand-red: #e80411;
+  --brand-teal: #1bbcb6;
+  --brand-light: #dfeceb;
+  --brand-black: #000000;
+
+  /* Theme tokens. Tints are mixed from the brand colours, nothing off-palette. */
+  --bg: var(--brand-black);
+  --card: color-mix(in srgb, var(--brand-light) 7%, var(--brand-black));
+  --ink: var(--brand-light);
+  --mute: color-mix(in srgb, var(--brand-light) 62%, var(--brand-black));
+  --line: color-mix(in srgb, var(--brand-light) 18%, var(--brand-black));
+  --acc: var(--brand-teal);          /* primary buttons, active tab, champion row */
+  --on-acc: var(--brand-black);      /* text on teal (white on teal is too faint) */
+  --ok: var(--brand-teal);           /* advancing / winning */
+  --okbg: color-mix(in srgb, var(--brand-teal) 18%, var(--brand-black));
+  --warn: var(--brand-red);          /* warnings, destructive confirm */
+}
+* { box-sizing: border-box; }
+body { margin: 0; border-top: 4px solid var(--brand-red); background: var(--bg); color: var(--ink); font: 15px/1.45 system-ui, sans-serif; }
+main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 1.4rem; margin: 0 0 4px; }
+h2 { font-size: 1.05rem; margin: 22px 0 8px; }
+.mute { color: var(--mute); font-size: 0.85rem; }
+.warn { color: var(--warn); font-size: 0.82rem; font-weight: 600; margin-top: 6px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 12px; }
+.locked { pointer-events: none; opacity: 0.7; }
+
+textarea, input, select { font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; }
+textarea { width: 100%; min-height: 150px; }
+label { display: inline-flex; gap: 6px; align-items: center; margin: 8px 14px 0 0; }
+input[type='number'] { width: 64px; }
+button { font: inherit; cursor: pointer; border: 0; border-radius: 6px; padding: 8px 14px; background: var(--acc); color: var(--on-acc); font-weight: 600; }
+button.sec { background: transparent; color: var(--ink); border: 1px solid var(--line); font-weight: 400; }
+button.armed { background: var(--brand-red); border-color: var(--brand-red); color: #fff; font-weight: 600; }
+button:disabled { opacity: 0.35; cursor: default; }
+.mini { padding: 1px 9px; font-size: 0.9rem; }
+
+/* tables */
+.tw { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; margin-top: 6px; }
+th, td { padding: 4px 6px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { font-size: 0.78rem; color: var(--mute); font-weight: 600; }
+td.n { text-align: right; font-variant-numeric: tabular-nums; }
+.inrow td { background: var(--okbg); }
+.out td { color: var(--mute); }
+
+.champ { background: var(--okbg); border: 1px solid var(--ok); color: var(--ok); font-weight: 700; font-size: 1.1rem; text-align: center; padding: 14px; border-radius: 10px; margin-top: 14px; }
+
+/* brackets */
+.bracket-scroll { overflow-x: auto; padding: 6px 0 10px; }
+.bracket { display: flex; gap: 64px; align-items: center; position: relative; width: max-content; min-width: 100%; padding: 4px; }
+.bracket.knockout { align-items: stretch; }
+.col { position: relative; z-index: 1; min-width: 190px; display: flex; flex-direction: column; gap: 10px; }
+.col h3 { margin: 0; font-size: 0.85rem; color: var(--mute); text-transform: uppercase; letter-spacing: 0.05em; }
+.knockout .col { min-width: 210px; }
+.final-group { flex: 1; display: grid; grid-template-rows: 1fr auto 1fr; }
+.third-slot { padding-top: 14px; }
+.matches { flex: 1; display: flex; flex-direction: column; justify-content: space-around; gap: 12px; }
+
+.connectors { position: absolute; left: 0; top: 0; pointer-events: none; color: var(--ok); }
+.knockout .connectors { color: var(--mute); }
+.connectors path { fill: none; stroke: currentColor; stroke-width: 1.5; opacity: 0.65; }
+
+/* lobby cards */
+.lob ol { margin: 6px 0 0; padding: 0; list-style: none; }
+.lob li { display: flex; justify-content: space-between; gap: 8px; padding: 2px 6px; border-radius: 4px; font-size: 0.88rem; }
+.lob li.adv { background: var(--okbg); color: var(--ok); font-weight: 600; }
+.lob li.champ1 { background: var(--acc); color: var(--on-acc); font-weight: 700; }
+.lob li.tbd, .tbd { color: var(--mute); font-style: italic; }
+.lob.ghost { opacity: 0.55; border-style: dashed; }
+
+/* 1v1 match cards */
+.mt { padding: 0; overflow: hidden; }
+.mh { font-size: 0.72rem; color: var(--mute); padding: 4px 8px; border-bottom: 1px solid var(--line); text-transform: uppercase; letter-spacing: 0.04em; }
+.pl { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 5px 8px; border-bottom: 1px solid var(--line); min-height: 36px; }
+.pl:last-child { border-bottom: 0; }
+.pl.win { background: var(--okbg); color: var(--ok); font-weight: 600; }
+.pl.lose { color: var(--mute); }
+.sc { display: inline-flex; gap: 6px; align-items: center; }
