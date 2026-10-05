@@ -2,13 +2,17 @@
 
 Two modes: 8-player lobby tournament (optional open rounds first) and 1v1 knockout.
 
+[live site](https://jg-exe.github.io/tournament_brackets/)
+
 ## Run
+
     paru -S nodejs npm        # if not installed
     npm install
     npm run dev               # dev server
     npm test                  # logic tests (no browser needed)
 
 ## Layout
+
     src/lib/          pure logic, no React. Edit rules here.
       constants.js    lobby size, points formula
       scoring.js      lobby standings + tiebreaks
