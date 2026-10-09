@@ -25,11 +25,15 @@ button:disabled { opacity: 0.35; cursor: default; }
 /* tables */
 .tw { overflow-x: auto; }
 table { border-collapse: collapse; width: 100%; margin-top: 6px; }
-th, td { padding: 4px 6px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th, td { padding: 4px 6px; text-align: center; border-bottom: 1px solid var(--line); white-space: nowrap; }
 th { font-size: 0.78rem; color: var(--mute); font-weight: 600; }
-td.n { text-align: right; font-variant-numeric: tabular-nums; }
+td.n { text-align: center; font-variant-numeric: tabular-nums;}
+td.n:first-child{border-right: 1px solid var(--line); }
+td.totals { background: var(--okbg); }
 .inrow td { background: var(--okbg); }
 .out td { color: var(--mute); }
+tr:nth-child(even){ background-color: var(--altbg); }
+tr:hover{ background-color: var(--hoverbg) }
 
 .champ { background: var(--okbg); border: 1px solid var(--ok); color: var(--ok); font-weight: 700; font-size: 1.1rem; text-align: center; padding: 14px; border-radius: 10px; margin-top: 14px; }
 

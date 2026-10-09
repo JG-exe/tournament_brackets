@@ -27,7 +27,7 @@ export default function OpenStandings({ rows, roundCount, cutSize = 0, qualified
                 {Array.from({ length: roundCount }, (_, r) => (
                   <td key={r} className="n">{row.perRound[r] ?? '–'}</td>
                 ))}
-                <td className="n"><b>{row.points}</b></td>
+                <td className="n totals"><b>{row.points}</b></td>
                 <td className="n">{row.wins}</td>
                 <td className="n">{row.top4}</td>
               </tr>
