@@ -22,7 +22,7 @@ export default function App() {
 
   return (
     <main>
-      <h1>TFT Tournament Bracket</h1>
+      <h1>Tournament Bracket</h1>
       <p className="mute">
         Lobby mode: points per game = 9 − placement (1st = 8, 8th = 1). Lobbies up to 8 players. One placement per game.
       </p>
