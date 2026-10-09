@@ -72,7 +72,7 @@ function LobbyTable({ lobby, carried, advancing, warnTies, onPosition }) {
       </div>
       {warnTies && rows.some((r) => r.tied) && (
         <div className="warn">
-          Tied on points, wins, top-4s and last game. Resolve manually (edit a placement) before advancing.
+          Tied on points, wins, top-4s and the last game. Resolve manually (edit a placement) before advancing.
         </div>
       )}
     </div>

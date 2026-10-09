@@ -1,0 +1,23 @@
+:root {
+    color-scheme: dark; /* native controls (selects, scrollbars) render dark */
+
+    /* Brand palette */
+    --brand-red: #e80411;
+    --brand-teal: #1bbcb6;
+    --brand-green: #00c85c;
+    --brand-gold: #dfb156;
+    --brand-light: #dfeceb;
+    --brand-black: #000000;
+
+    /* Theme tokens. Tints are mixed from the brand colours */
+    --bg: var(--brand-black);
+    --card: color-mix(in srgb, var(--brand-light) 7%, var(--brand-black));
+    --ink: var(--brand-light);
+    --mute: color-mix(in srgb, var(--brand-light) 62%, var(--brand-black));
+    --line: color-mix(in srgb, var(--brand-light) 18%, var(--brand-black));
+    --acc: var(--brand-gold);          /* primary buttons, active tab, champion row */
+    --on-acc: var(--brand-black);
+    --ok: var(--brand-gold);           /* advancing / winning */
+    --okbg: color-mix(in srgb, var(--brand-gold) 18%, var(--brand-black));
+    --warn: var(--brand-red);          /* warnings, destructive confirm */
+}
