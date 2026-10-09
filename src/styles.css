@@ -4,19 +4,21 @@
   /* Brand palette */
   --brand-red: #e80411;
   --brand-teal: #1bbcb6;
+  --brand-green: #00c85c;
+  --brand-gold: #dfb156;
   --brand-light: #dfeceb;
   --brand-black: #000000;
 
-  /* Theme tokens. Tints are mixed from the brand colours, nothing off-palette. */
+  /* Theme tokens. Tints are mixed from the brand colours */
   --bg: var(--brand-black);
   --card: color-mix(in srgb, var(--brand-light) 7%, var(--brand-black));
   --ink: var(--brand-light);
   --mute: color-mix(in srgb, var(--brand-light) 62%, var(--brand-black));
   --line: color-mix(in srgb, var(--brand-light) 18%, var(--brand-black));
-  --acc: var(--brand-teal);          /* primary buttons, active tab, champion row */
-  --on-acc: var(--brand-black);      /* text on teal (white on teal is too faint) */
-  --ok: var(--brand-teal);           /* advancing / winning */
-  --okbg: color-mix(in srgb, var(--brand-teal) 18%, var(--brand-black));
+  --acc: var(--brand-gold);          /* primary buttons, active tab, champion row */
+  --on-acc: var(--brand-black);
+  --ok: var(--brand-gold);           /* advancing / winning */
+  --okbg: color-mix(in srgb, var(--brand-gold) 18%, var(--brand-black));
   --warn: var(--brand-red);          /* warnings, destructive confirm */
 }
 * { box-sizing: border-box; }
@@ -34,6 +36,7 @@ textarea, input, select { font: inherit; color: var(--ink); background: var(--bg
 textarea { width: 100%; min-height: 150px; }
 label { display: inline-flex; gap: 6px; align-items: center; margin: 8px 14px 0 0; }
 input[type='number'] { width: 64px; }
+input[type='checkbox'] { accent-color: var(--brand-gold); }
 button { font: inherit; cursor: pointer; border: 0; border-radius: 6px; padding: 8px 14px; background: var(--acc); color: var(--on-acc); font-weight: 600; }
 button.sec { background: transparent; color: var(--ink); border: 1px solid var(--line); font-weight: 400; }
 button.armed { background: var(--brand-red); border-color: var(--brand-red); color: #fff; font-weight: 600; }
