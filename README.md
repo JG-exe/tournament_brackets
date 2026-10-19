@@ -1,6 +1,7 @@
 # TFT Tournament Bracket
 
-Two modes: 8-player lobby tournament (optional open rounds first) and 1v1 knockout.
+A basic bracket tool for tournaments.  
+Two modes: 8-player lobby tournament (optional open rounds first) and 1v1 knockout.  
 
 [live site](https://jg-exe.github.io/tournament_brackets/)
 
